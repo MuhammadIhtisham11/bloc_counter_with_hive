@@ -25,7 +25,7 @@ class CounterBloc extends Bloc<CounterEvent, CounterState> {
   }
 
   FutureOr<void> _reset(Reset event, Emitter<CounterState> emit) async {
-    final newvalue = state.counter = 1;
+    final newvalue = state.counter = 0;
     await CounterStoreData.saveData(newvalue);
     emit(CounterState(counter: newvalue));
   }
